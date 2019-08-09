@@ -7,7 +7,14 @@ import './App.css';
 
 class App extends Component {
 
-  state = ["😀", "🎉", "💖", "🎩", "🐶" , "🐱", ""];
+  state = [
+      "😀", "🎉", "💖", "🎩", "🐶" ,
+      "😀", "🎉", "💖", "🎩", "🐶" ,
+      "😀", "🎉", "💖", "🎩", "🐶" ,
+      "😀", "🎉", "💖", "🎩", "🐶" ,
+      "😀", "🎉", "💖", "🎩", "🐶" ,
+      "😀", "🎉", "💖", "🎩", "🐶" ,
+  ];
 
   handleCardClick(card) {
     console.log( card, 'clicked') ;
@@ -15,11 +22,11 @@ class App extends Component {
 
   render() {
     const won = new Date().getSeconds() % 2 === 0 ;
-    const cards = this.state ;
+    const cards = this.state;
       return (
         <div className="memory">
             <GuessCount guesses={0} />
-            { cards.map( (card, index) => (
+            { cards.map( ( card, index) => (
                   <Card
                     key={index}
                     card={card}
